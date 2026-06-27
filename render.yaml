@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: marketplace-monitor-api
+    env: python
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && python main.py"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend-url.vercel.app
